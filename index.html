@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
-    <link rel="stylesheet" href="assests/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="topo">
@@ -17,28 +17,29 @@
             <h1>Novo cadastro</h1>
             <p>Preencha os dados para incluir uma pessoa na comunidade.</p>
         </div>
+
         <div class="nome">
             <h3><strong>Nome completo *</strong></h3>
-            <input type="text" placeholder="Ex.:Mariana Oliveira">
+            <input type="text" id="nome" placeholder="Ex.:Mariana Oliveira" required>
         </div>
 
         <div class="datanascimento">
-            <h3><strong>Data de nascimento *</strong></h3>
-            <input type="text" placeholder="dia/mês/ano">
+            <label for="nascimento">Data de nascimento *</label>
+            <input type="date" id="nascimento" required>
         </div>
 
         <div class="viculo">
             <h3><strong>Vínculo *</strong></h3>
-            <select name="" id="">
+            <select name="" id="vinculo">
                 <option value="aluno">Aluno</option>
                 <option value="professor">Professor</option>
                 <option value="outro">Outro</option>
-            </select>
+            </select required>
         </div>
 
         <div class="turma">
             <h3><strong>Turma / Setor *</strong></h3>
-            <input type="text" placeholder="Ex.:TDS 2025">
+            <input type="text" id="turma" placeholder="Ex.:TDS 2025" required>
         </div>
 
         <div class="endereco">
@@ -47,44 +48,42 @@
 
             <div class="cep">
                 <h3> <strong>CEP *</strong></h3>
-                <input type="text" placeholder="00000-000">
+                <input type="text" id="numeroCEP" placeholder="00000-000" required>
             </div>
 
             <div class="logradouro">
                 <h3><strong>Logradouro *</strong></h3>
-                <input type="text" placeholder="Rua,avenida,travessa...">
+                <input type="text" id="logradouro" placeholder="Rua,avenida,travessa...">
             </div>
 
             <div class="numero-endereco">
                 <h3><strong>Número *</strong></h3>
-                <input type="text" placeholder="N° ou S/N">
+                <input type="text" id="numerocasa" placeholder="N° ou S/N" required>
             </div>
 
             <div class="complemento">
                 <h3><strong>Complemento</strong> <span>(opcinal)</span></h3>
-                <input type="text" placeholder="Apto,bloco,referência">
+                <input type="text" id="complemento" placeholder="Apto,bloco,referência">
             </div>
 
             <div class="bairro">
                 <h3><strong>Bairro *</strong></h3>
-                <input type="text" placeholder="Bairro">
+                <input type="text" id="bairro" placeholder="Bairro" required>
             </div>
 
             <div class="cidade">
                 <h3><strong>Cidade *</strong></h3>
-                <input type="text" placeholder="Cidade">
+                <input type="text" id="cidade" placeholder="Cidade" required>
             </div>
 
             <div class="uf">
                 <h3><strong>UF</strong></h3>
-                <input type="text" placeholder="UF">
+                <input type="text" id="UF" placeholder="UF">
             </div>
 
-
-
             <div class="botoes">
-                <button id="cadastrar">+ Cadastrar pessoa</button>
-                <button id="limpar">Limpar formulário</button>
+                <button onclick="cadastrarPessoa()" id="cadastrar">+ Cadastrar pessoa</button>
+                <button onclick="limparCadastro()" id="limpar">Limpar formulário</button>
             </div>
         </div>
     </section>
@@ -93,5 +92,7 @@
         <h1>Pessoas cadastradas</h1>
         <input type="text" placeholder="Buscar por nome, vínculo,turma...">
     </section>
+
+    <script src="javascript/script.js"></script>
 </body>
 </html>
