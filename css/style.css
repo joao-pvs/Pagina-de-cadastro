@@ -222,6 +222,9 @@ body > section:not(.cadastro) input {
     font-size: 11px;
 }
 
+
+
+
 /* Ajustes para telas menores */
 @media (max-width: 750px) {
     .topo {
