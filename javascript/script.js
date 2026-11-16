@@ -5,7 +5,7 @@
        {
          'nome' : document.querySelector('#nome').value,
          'nascimento': document.querySelector('#nascimento').value,
-         'viculo' : document.querySelector('#viculo'),
+         'vinculo' : document.querySelector('#vinculo').value,
          'turma' : document.querySelector('#turma').value,
          'CEP' : document.querySelector('#numeroCEP').value,
          'Logradouro' : document.querySelector('#logradouro').value,
@@ -18,3 +18,4 @@
     ]
     console.log(dados);
    }
+
