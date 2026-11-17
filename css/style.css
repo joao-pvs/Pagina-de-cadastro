@@ -199,38 +199,53 @@ body {
     border: 1px solid #dce5f0;
 }
 
+
 /* Pessoas cadastradas */
 body > section:not(.cadastro) {
-    width: 92%;
-    min-height: 255px;
-    margin: 20px auto;
-    padding: 20px 30px;
-    background-color: white;
+width: 92%;
+margin: 20px auto;
+padding: 20px;
+background-color: white;
+overflow-x: auto;
 }
 
 body > section:not(.cadastro) h1 {
-    font-size: 14px;
-    display: inline-block;
+font-size: 15px;
+display: inline-block;
 }
 
 body > section:not(.cadastro) input {
-    float: right;
-    width: 240px;
-    height: 34px;
-    padding: 0 10px;
-    border: 1px solid #dce5f0;
-    font-size: 11px;
+float: right;
+width: 240px;
+height: 34px;
+padding: 0 10px;
+border: 1px solid #dce5f0;
+font-size: 11px;
 }
 
-.tabelaDados{
-    padding: 20px;
-    border-spacing: 20px;
+/* Tabela */
+.tabelaDados {
+width: 100%;
+min-width: 1000px;
+margin-top: 25px;
+border-collapse: collapse;
+font-size: 12px;
 }
 
-.pessoas{
-    display: flex;
-    gap: 30px;
+.tabelaDados th {
+background-color: #ffffff;
+color: #17304d;
+padding: 12px;
+text-align: left;
+border-bottom: 1px solid #dce5f0;
 }
+
+.tabelaDados td {
+padding: 12px;
+border-bottom: 1px solid #e5eaf0;
+color: #35465c;
+}
+
 
 /* Ajustes para telas menores */
 @media (max-width: 750px) {
