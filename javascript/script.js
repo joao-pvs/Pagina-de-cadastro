@@ -31,18 +31,29 @@
        var dadosCadastrados = JSON.parse(localStorage.getItem('cadastros'));
       console.log('Esses sao os dados:', dadosCadastrados);
 
-      const tabela = document.querySelector('#tabelaDados');
-      tabela.innerHTML = ''; // Limpa o conteúdo antes de preencher para evitar duplicatas
+      const tabela = document.querySelector('.tabelaDados');
+      tabela.innerHTML = ''; 
 
       dadosCadastrados.forEach(dado => {
       console.log(dado);
-      tabela.innerHTML += `
-         <p>${dado[0].nome}</p>
-         <p>${dado[0].nascimento}</p>
-         <p>${dado[0].vinculo}</p>
-         <p>${dado[0].turma}</p>
-         <p>${dado[0].CEP}</p>
-      `;
+      tabela.insertAdjacentHTML('beforeend',
+         `
+         <tr>
+               <td>${dados[0].nome}</td>
+               <td>${dados[0].dataNascimento}</td>
+               <td>${dados[0].vinculo}</td>
+               <td>${dados[0].turma}</td>
+               <td>${dados[0].endereco}</td>
+               <td>${dados[0].cep}</td>
+               <td>${dados[0].logradouro}</td>
+               <td>${dados[0].numero}</td>
+               <td>${dados[0].complemento}</td>
+               <td>${dados[0].bairro}</td>
+               <td>${dados[0].cidade}</td>
+               <td>${dados[0].uf}</td>
+          </tr>
+         `
+      )
       });
    }
 
@@ -55,4 +66,4 @@
    }
 
    
-   popularTabela();
+   

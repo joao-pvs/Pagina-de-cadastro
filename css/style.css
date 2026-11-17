@@ -222,8 +222,15 @@ body > section:not(.cadastro) input {
     font-size: 11px;
 }
 
+.tabelaDados{
+    padding: 20px;
+    border-spacing: 20px;
+}
 
-
+.pessoas{
+    display: flex;
+    gap: 30px;
+}
 
 /* Ajustes para telas menores */
 @media (max-width: 750px) {
