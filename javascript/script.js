@@ -39,18 +39,18 @@
       tabela.insertAdjacentHTML('beforeend',
          `
          <tr>
-               <td>${dados[0].nome}</td>
-               <td>${dados[0].dataNascimento}</td>
-               <td>${dados[0].vinculo}</td>
-               <td>${dados[0].turma}</td>
-               <td>${dados[0].endereco}</td>
-               <td>${dados[0].cep}</td>
-               <td>${dados[0].logradouro}</td>
-               <td>${dados[0].numero}</td>
-               <td>${dados[0].complemento}</td>
-               <td>${dados[0].bairro}</td>
-               <td>${dados[0].cidade}</td>
-               <td>${dados[0].uf}</td>
+               <td>${dado[0].nome}</td>
+               <td>${dado[0].dataNascimento}</td>
+               <td>${dado[0].vinculo}</td>
+               <td>${dado[0].turma}</td>
+               <td>${dado[0].endereco}</td>
+               <td>${dado[0].cep}</td>
+               <td>${dado[0].logradouro}</td>
+               <td>${dado[0].numero}</td>
+               <td>${dado[0].complemento}</td>
+               <td>${dado[0].bairro}</td>
+               <td>${dado[0].cidade}</td>
+               <td>${dado[0].uf}</td>
           </tr>
          `
       )
@@ -64,6 +64,44 @@
          campo.value = '';
       });
    }
+
+   
+   // Buscar endereço pelo CEP
+document.querySelector('#numeroCEP').addEventListener('blur', buscarCEP);
+
+async function buscarCEP() {
+
+var cep = document.querySelector('#numeroCEP').value;
+
+cep = cep.replace(/\D/g, '');
+
+if (cep.length !== 8) {
+    return;
+}
+
+try {
+
+    const resposta = await fetch('https://viacep.com.br/ws/' + cep + '/json/');
+
+    const dados = await resposta.json();
+
+    if (dados.erro) {
+        alert('CEP não encontrado!');
+        return;
+    }
+
+    document.querySelector('#logradouro').value = dados.logradouro;
+    document.querySelector('#bairro').value = dados.bairro;
+    document.querySelector('#cidade').value = dados.localidade;
+    document.querySelector('#UF').value = dados.uf;
+    document.querySelector('#complemento').value = dados.complemento;
+
+} catch (erro) {
+
+    alert('CEP não encontrado. Tente novamente.');
+
+}
+}
 
    
    
