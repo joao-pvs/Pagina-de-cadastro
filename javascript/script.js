@@ -1,5 +1,4 @@
-   
-   function cadastrarPessoa(){
+function cadastrarPessoa(){
     alert( document.querySelector('#nome').value);
 
     var dados = [
@@ -40,17 +39,17 @@
          `
          <tr>
                <td>${dado[0].nome}</td>
-               <td>${dado[0].dataNascimento}</td>
+               <td>${dado[0].nascimento}</td>
                <td>${dado[0].vinculo}</td>
                <td>${dado[0].turma}</td>
-               <td>${dado[0].endereco}</td>
-               <td>${dado[0].cep}</td>
-               <td>${dado[0].logradouro}</td>
-               <td>${dado[0].numero}</td>
-               <td>${dado[0].complemento}</td>
-               <td>${dado[0].bairro}</td>
-               <td>${dado[0].cidade}</td>
-               <td>${dado[0].uf}</td>
+               <td>${dado[0].Endereço}</td>
+               <td>${dado[0].CEP}</td>
+               <td>${dado[0].Logradouro}</td>
+               <td>${dado[0].Número}</td>
+               <td>${dado[0].Complemento}</td>
+               <td>${dado[0].Bairro}</td>
+               <td>${dado[0].Cidade}</td>
+               <td>${dado[0].UF}</td>
           </tr>
          `
       )
